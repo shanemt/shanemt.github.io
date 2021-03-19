@@ -7,12 +7,18 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+      - name: Setup Node ⚙️
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: '15'
-      - run: npm install
-      - run: npm run build
-      - run: npm run deploy
+      - name: Build 🔨
+        run: |
+          npm install
+          npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          branch: release
+          folder: dist
