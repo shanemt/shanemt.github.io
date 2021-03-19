@@ -6,3 +6,4 @@
 - [x] Create GitHub worfklow to continuously deploy release branch
 - [ ] Add some initial info and styling
 - [ ] Add light or dark CSS based on user OS perferences
+- [ ] Add custom URL
